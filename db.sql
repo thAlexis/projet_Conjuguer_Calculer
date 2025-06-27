@@ -7,8 +7,8 @@ USE conjuguer_calc_project;
 CREATE TABLE utilisateurs (
   id INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(30) UNIQUE,
-  password VARCHAR(256),
-  nom VARCHAR(30)
+  name VARCHAR(30),
+  password VARCHAR(256)
 )
 
 CREATE TABLE histo_conjug (
@@ -27,3 +27,5 @@ CREATE TABLE histo_calc (
   valeur2 INT,
   FOREIGN KEY (userId) REFERENCES utilisateurs(id)
 )
+
+DROP TABLE utilisateurs, histo_calc, histo_conjug;
