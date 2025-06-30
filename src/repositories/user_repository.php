@@ -1,6 +1,6 @@
 <?php
 
-include "../config/connection.php";
+include __DIR__ . "/../config/connection.php";
 
 function signin_user($username, $name, $password)
 {
@@ -32,3 +32,17 @@ function login_user($username, $password)
     echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
   };
 };
+
+function get_user_by_session_username($session_username)
+{
+  try {
+    $pdo = get_connection_to_db();
+    $select = "SELECT * FROM utilisateurs WHERE username = :username";
+    $select_query = $pdo->prepare($select);
+    $select_query->bindValue(":username", $session_username);
+    $select_query->execute();
+    return $select_query->fetch();
+  } catch (PDOException $ex) {
+    echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
+  }
+}

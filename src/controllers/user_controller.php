@@ -14,15 +14,15 @@ if (str_contains($_SERVER['HTTP_REFERER'], "inscription_page")) {
 };
 
 if (str_contains($_SERVER['HTTP_REFERER'], "connexion_page")) {
-  $_SESSION['username_logged'] = htmlentities($_POST['username']);
   $username = $_POST['username'];
   $password = $_POST['password'];
   $existing = login_user($username, $password);
   if ($existing !== false) {
+    $_SESSION['username_logged'] = htmlentities($_POST['username']);
     header("location:../../views/connected_page.php");
     die();
   } else {
-    echo "Identifiants incorrect";
+    header("location:../../views/wrong_id.php");
     die();
   };
 };
