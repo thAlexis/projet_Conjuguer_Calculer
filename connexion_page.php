@@ -14,7 +14,7 @@
     <h1 class="text-4xl">Bienvenue sur Conjuguer et Calculer</h1>
     <div class="bg-[#9775fa] mt-[5rem] flex flex-col items-center w-md pt-[2rem] pb-[2rem] rounded-lg shadow-lg text-white">
       <h2 class="text-2xl">Connectez-vous</h2>
-      <form action="" method="post" class="flex flex-col items-center w-sm">
+      <form action="./src/controllers/user_controller.php" method="post" class="flex flex-col items-center w-sm">
         <label for="username" class="self-start mt-[2rem]">Nom d'utilisateur</label>
         <input type="text" id="username" name="username" class="bg-white w-sm mt-[0.5rem] rounded-sm text-black outline-none p-[0.2rem]" />
         <label for="password" class="self-start mt-[2rem]">Mot de passe</label>
