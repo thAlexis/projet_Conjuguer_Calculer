@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,6 +14,9 @@
 </head>
 
 <body>
+  <?php
+  include "./views/components/navbar.php";
+  ?>
   <div class="flex flex-col items-center mt-[10rem]">
     <h1 class="text-4xl">Bienvenue sur Conjuguer et Calculer</h1>
     <div class="bg-[#9775fa] mt-[5rem] flex flex-col items-center w-md pt-[2rem] pb-[2rem] rounded-lg shadow-lg text-white">
