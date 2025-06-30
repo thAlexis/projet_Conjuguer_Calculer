@@ -46,3 +46,19 @@ function get_user_by_session_username($session_username)
     echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
   }
 }
+
+function update_user($username, $name, $password)
+{
+  try {
+    $pdo = get_connection_to_db();
+    $update = "UPDATE utilisateurs SET username = :username, name = :name, password = :password WHERE username = :userlogged";
+    $update_query = $pdo->prepare($update);
+    $update_query->bindValue(":username", $username);
+    $update_query->bindValue(":name", $name);
+    $update_query->bindValue(":password", $password);
+    $update_query->bindValue(":userlogged", $_SESSION['username_logged']);
+    $update_query->execute();
+  } catch (PDOException $ex) {
+    echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
+  }
+}

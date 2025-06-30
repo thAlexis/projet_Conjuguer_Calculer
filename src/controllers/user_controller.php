@@ -26,3 +26,15 @@ if (str_contains($_SERVER['HTTP_REFERER'], "connexion_page")) {
     die();
   };
 };
+
+if (str_contains($_SERVER['HTTP_REFERER'], "connected_page.php?modifybtn=modify")) {
+  $username = $_POST['username'];
+  $name = $_POST['name'];
+  $password = $_POST['password'];
+  update_user($username, $name, $password);
+  if ($_SESSION['username_logged'] !== $username) {
+    $_SESSION['username_logged'] = $username;
+  };
+  header("location:../../views/connected_page.php?modifybtn=modify");
+  die();
+}
