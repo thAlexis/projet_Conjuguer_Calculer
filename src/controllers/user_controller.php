@@ -38,3 +38,12 @@ if (str_contains($_SERVER['HTTP_REFERER'], "connected_page.php?modifybtn=modify"
   header("location:../../views/connected_page.php?modifybtn=modify");
   die();
 }
+
+var_dump($_SERVER);
+
+if (str_contains($_SERVER['HTTP_REFERER'], "modifybtn=delete")) {
+  $userlogged = $_SESSION['username_logged'];
+  delete_user($userlogged);
+  header("location:../services/logout.php");
+  die();
+}

@@ -12,4 +12,9 @@ if (isset($_GET['modifybtn']) && $_GET['modifybtn'] == "modify") : ?>
       <button class="mt-[2rem] p-[0.5rem] rounded-sm bg-[#9775fa] text-white cursor-pointer hover:bg-[#9911fa]">Enregistrer</button>
     </form>
   </div>
+<?php elseif (isset($_GET['modifybtn']) && $_GET['modifybtn'] == "delete") : ?>
+  <form class="flex flex-col items-center mt-[2rem]" method="post" action="../src/controllers/user_controller.php">
+    <p>Souhaitez vous supprimer définitivement votre compte ?</p>
+    <button class="mt-[1rem] bg-red-800 text-white p-[0.5rem] rounded-sm cursor-pointer hover:bg-red-500">Supprimer le compte</button>
+  </form>
 <?php endif; ?>

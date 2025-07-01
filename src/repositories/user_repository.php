@@ -62,3 +62,16 @@ function update_user($username, $name, $password)
     echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
   }
 }
+
+function delete_user($userlogged)
+{
+  try {
+    $pdo = get_connection_to_db();
+    $delete = "DELETE FROM utilisateurs WHERE username = :userlogged";
+    $delete_query = $pdo->prepare($delete);
+    $delete_query->bindValue(":userlogged", $userlogged);
+    $delete_query->execute();
+  } catch (PDOException $ex) {
+    echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
+  }
+}
