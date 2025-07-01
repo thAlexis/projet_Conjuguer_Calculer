@@ -3,7 +3,7 @@
   <?php
   if (isset($_SESSION['username_logged'])) {
     echo '<ul class="flex justify-between w-[11rem] ">
-    <li><a href="">Conjuguer</a></li>
+    <li><a href="./conjuguer.php">Conjuguer</a></li>
     <li><a href="">Calculer</a></li>
   </ul>
   <ul class="flex justify-between w-[16rem]">
