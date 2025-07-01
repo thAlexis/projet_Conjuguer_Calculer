@@ -12,8 +12,8 @@
   </ul>';
   } else {
     echo '<div class="flex gap-[1rem] justify-end w-[100%]">
-    <a href="../connexion_page.php">Connexion</a>
-    <a href="../inscription_page.php">Incription</a>
+    <a href="./connexion_page.php">Connexion</a>
+    <a href="./inscription_page.php">Incription</a>
     </div>';
   };
   ?>

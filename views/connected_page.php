@@ -1,6 +1,7 @@
 <?php
 include "../src/repositories/user_repository.php";
 session_start();
+include "../src/services/check_loggedin.php";
 ?>
 
 <!DOCTYPE html>
