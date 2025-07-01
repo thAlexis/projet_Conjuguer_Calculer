@@ -1,5 +1,7 @@
 <?php
 
+include __DIR__ . "../../repositories/history_repository.php";
+
 function traiter_verbe($infinitif, $temps)
 {
   $terminaisons_futur = ['erai', 'eras', 'era', 'erons', 'erez', 'eront'];
@@ -29,3 +31,15 @@ function conjuguer($radical, $terminaisons)
   $resultat .= "</ul>";
   return $resultat;
 }
+
+function display_conjug_histo()
+{
+  $user_logged = $_SESSION['username_logged'];
+  $userid = get_user_id($user_logged)['id'];
+  $results = select_verbe_temps($userid);
+  echo "<ul class='flex flex-col items-center mt-[2rem]'>";
+  foreach ($results as $result) {
+    echo "<li class='mt-[0.5rem]'>Vous avez conjugué <strong>" . $result['verbe'] . "</strong> au temps <strong>" . $result['temps'] . "</strong></li>";
+  };
+  echo "</ul>";
+};

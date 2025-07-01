@@ -2,6 +2,7 @@
 include "../src/repositories/user_repository.php";
 session_start();
 include "../src/services/check_loggedin.php";
+include "../src/services/conjug_calcul_service.php";
 ?>
 
 <!DOCTYPE html>

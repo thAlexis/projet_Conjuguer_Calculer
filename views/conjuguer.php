@@ -19,7 +19,7 @@ include "../src/services/conjug_calcul_service.php";
   <?php include "./components/navbar.php" ?>
   <h1 class="flex justify-center mt-[2rem] text-2xl">Conjuguer un verbe du premier groupe</h1>
   <div class="w-[100%] flex justify-center mt-[2rem]">
-    <form class="flex flex-col items-center w-[min-content] p-[1rem] bg-[#9775fa] rounded-md text-white" method="get" action="">
+    <form class="flex flex-col items-center w-[min-content] p-[1rem] bg-[#9775fa] rounded-md text-white" method="get" action="../src/controllers/conjug_calc_controller.php">
       <label class="self-start" for="verbeinfinitif">Verbe à conjuguer</label>
       <input class="bg-white w-[15rem] mt-[0.5rem] rounded-sm text-black" type="text" id="verbeinfinitif" name="verbeinfinitif">
       <label class="self-start mt-[1rem]" for="temps">Temps de conjugaison</label>
