@@ -18,5 +18,6 @@ if (isset($_GET['modifybtn']) && $_GET['modifybtn'] == "modify") : ?>
     <button class="mt-[1rem] bg-red-800 text-white p-[0.5rem] rounded-sm cursor-pointer hover:bg-red-500">Supprimer le compte</button>
   </form>
 <?php elseif (isset($_GET['modifybtn']) && $_GET['modifybtn'] == "histoconjug") : ?>
+  <h2 class="text-xl mt-[3rem] flex justify-center">Historique de vos conjugaisons :</h2>
   <?php display_conjug_histo(); ?>
 <?php endif; ?>

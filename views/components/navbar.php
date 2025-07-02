@@ -4,7 +4,7 @@
   if (isset($_SESSION['username_logged'])) {
     echo '<ul class="flex justify-between w-[11rem] ">
     <li><a href="./conjuguer.php">Conjuguer</a></li>
-    <li><a href="">Calculer</a></li>
+    <li><a href="./calculer.php">Calculer</a></li>
   </ul>
   <ul class="flex justify-between w-[16rem]">
   <li><a href="./connected_page.php">Mon compte</a></li>
