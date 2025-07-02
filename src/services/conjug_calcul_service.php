@@ -60,3 +60,15 @@ function calculer($v1, $v2, $op)
 
   return $r;
 }
+
+function display_calc_histo()
+{
+  $user_logged = $_SESSION['username_logged'];
+  $userid = get_user_id($user_logged)['id'];
+  $results = select_calc($userid);
+  echo "<ul class='flex flex-col items-center mt-[1rem]'>";
+  foreach ($results as $result) {
+    echo "<li class='mt-[0.5rem]'>Vous avez fait le calcul : <strong>" . $result['valeur1'] . " " . $result['operateur'] . " " . $result['valeur2'] . "</strong>";
+  };
+  echo "</ul>";
+};

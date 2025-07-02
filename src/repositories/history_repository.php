@@ -60,3 +60,17 @@ function add_calc_history($userid, $v1, $op, $v2)
     echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
   };
 }
+
+function select_calc($userid)
+{
+  try {
+    $pdo = get_connection_to_db();
+    $select = "SELECT valeur1, operateur, valeur2 FROM histo_calc WHERE userid = :userid";
+    $select_query = $pdo->prepare($select);
+    $select_query->bindValue(":userid", $userid);
+    $select_query->execute();
+    return $select_query->fetchAll();
+  } catch (PDOException $ex) {
+    echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
+  };
+}

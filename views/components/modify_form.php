@@ -20,4 +20,7 @@ if (isset($_GET['modifybtn']) && $_GET['modifybtn'] == "modify") : ?>
 <?php elseif (isset($_GET['modifybtn']) && $_GET['modifybtn'] == "histoconjug") : ?>
   <h2 class="text-xl mt-[3rem] flex justify-center">Historique de vos conjugaisons :</h2>
   <?php display_conjug_histo(); ?>
+<?php elseif (isset($_GET['modifybtn']) && $_GET['modifybtn'] == "histocalc") : ?>
+  <h2 class="text-xl mt-[3rem] flex justify-center">Historique de vos calculs :</h2>
+  <?php display_calc_histo(); ?>
 <?php endif; ?>
