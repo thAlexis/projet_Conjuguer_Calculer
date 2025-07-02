@@ -19,7 +19,7 @@ include "../src/services/conjug_calcul_service.php";
   <?php include "./components/navbar.php" ?>
   <h1 class="text-xl flex justify-center mt-[2rem]">Faire un calcul</h1>
   <div class="flex justify-center">
-    <form class="flex gap-[1rem] justify-center bg-[#9775fa] w-[min-content] p-[1rem] rounded-md mt-[1rem]" method="get" action="">
+    <form class="flex gap-[1rem] justify-center bg-[#9775fa] w-[min-content] p-[1rem] rounded-md mt-[1rem]" method="get" action="../src/controllers/conjug_calc_controller.php">
       <input class="bg-white rounded-sm w-[8rem]" type="text" id="firstvalue" name="firstvalue" placeholder="Première valeur" />
       <select class="bg-white rounded-sm" name="operator">
         <option selected disabled>Selectionnez un opérateur</option>
@@ -41,6 +41,7 @@ include "../src/services/conjug_calcul_service.php";
         $op = $_GET['operator'];
         $v2 = intval($_GET['secondvalue']);
         echo calculer($v1, $v2, $op);
+        die();
         ?>
       </p>
     </div>

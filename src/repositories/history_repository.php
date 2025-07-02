@@ -44,3 +44,19 @@ function select_verbe_temps($userid)
     echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
   };
 }
+
+function add_calc_history($userid, $v1, $op, $v2)
+{
+  try {
+    $pdo = get_connection_to_db();
+    $insert = "INSERT INTO histo_calc VALUES (NULL, :userid, :v1, :op, :v2)";
+    $insert_query = $pdo->prepare($insert);
+    $insert_query->bindValue(":userid", $userid);
+    $insert_query->bindValue(":v1", $v1);
+    $insert_query->bindValue(":op", $op);
+    $insert_query->bindValue(":v2", $v2);
+    $insert_query->execute();
+  } catch (PDOException $ex) {
+    echo "\nErreur : problème de connexion avec la base de données." . $ex->getMessage();
+  };
+}

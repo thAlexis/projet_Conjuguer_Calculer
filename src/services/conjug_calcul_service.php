@@ -47,6 +47,7 @@ function display_conjug_histo()
 function calculer($v1, $v2, $op)
 {
   try {
+    // var_dump($op);
     $r =  match ($op) {
       '+'  =>  $v1 + $v2,
       '-'  =>  $v1 - $v2,
